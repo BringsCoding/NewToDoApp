@@ -1,0 +1,50 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+h1 {
+  background-color: #ef476f;
+  text-align: center;
+  margin: 0;
+  padding: 40px;
+}
+
+.middel {
+  margin: 10px;
+  text-align: center;
+}
+
+.options-button {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+.removebutton {
+  text-align: center;
+  margin: 15px;
+}
+
+#lielement {
+  text-align: center;
+  list-style-position: inside;
+}
+
+li {
+  list-style: none;
+}
+
+#myUL {
+  text-align: center;
+}
+
+ul li.checked {
+  color: aquamarine;
+}
