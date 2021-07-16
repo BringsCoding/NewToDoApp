@@ -5,34 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>My To Do App</title>
   </head>
   <body>
     <main>
-      <section>
-        <h1>To Do App</h1>
-      </section>
-      <section class="middel">
-        <input type="text" id="textfild" name="spind" placeholder="Tipp ein" />
-        <input type="button" id="addme" value="Add me" />
-      </section>
-      <section class="options-button">
-        <h2>Filter & Options</Option></h2>
-        <input type="radio" id='#all' name="gender"> All<br>
-        <input type="radio" id='#finish' name="gender">open<br>
-        <input type="radio" name="gender">done
+        <header>
+          <section>
+            <h1>To Do App</h1>
+          </section>
+        </header>
+        <section class="middel">
+           <input type="text" id="textfild" name="spind" placeholder="Tipp ein" />
+           <input type="button" id="addme" value="Add me" />
+        </section> 
+          <section class="options-button">
+           <h2>Filter & Options</Option></h2><br>
+           <div class="button-radio-center">
+             <input type="radio" id='#allone' name="button">all
+             <input type="radio" id='#finish' name="button">open
+             <input type="radio" name="button">done
+             <input type="button" id="remove-button" value="Remove All" />
+             </div>
+           </section>
+        <section>
+         <h2>Your To Do´s</h2>
+          <ul id="myUL">
+            <li id='li-element' class="test">
+              <p>test</p>
+              <p>test</p>
+              <p>test</p>
+              <p>test</p>
+            </li>
+          </ul>
         </section>
-        <section class="removebutton">
-      <input type="button"  value="Remove All" />
-    </section>
-      <section>
-        <h2>Your To Do´s</h2>
-        
-        <ul id="myUL">
-            <li id='li-element' class="test"></li>
-        </ul>
-      </section>
-    </main>
+     </main>
   </body>
   <script src="JavaScript.js"></script>
 </html>

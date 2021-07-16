@@ -19,6 +19,9 @@ h1 {
 .middel {
   margin: 10px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Radio Button section */
@@ -27,6 +30,20 @@ h1 {
   display: block;
 }
 
+.button-radio-center {
+  display: inline-grid;
+  position: relative;
+  bottom: 20px;
+}
+input[type="radio" i] {
+  position: relative;
+  top: 15px;
+  left: 10px;
+}
+
+#remove-button {
+  margin: 10px;
+}
 h2 {
   text-align: center;
 }
