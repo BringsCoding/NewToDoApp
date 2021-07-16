@@ -7,6 +7,7 @@
 body {
   margin: 0;
 }
+
 h1 {
   background-color: #ef476f;
   text-align: center;
@@ -14,13 +15,16 @@ h1 {
   padding: 40px;
 }
 
+/* Add me and Button section */
 .middel {
   margin: 10px;
   text-align: center;
 }
 
+/* Radio Button section */
 .options-button {
   text-align: center;
+  display: block;
 }
 
 h2 {
@@ -32,7 +36,8 @@ h2 {
   margin: 15px;
 }
 
-#lielement {
+/* List elemente */
+#li-element {
   text-align: center;
   list-style-position: inside;
 }
@@ -41,10 +46,11 @@ li {
   list-style: none;
 }
 
-#myUL {
-  text-align: center;
+#checkboxen:checked + p {
+  color: #3deb11;
+  text-decoration: line-through;
 }
 
-ul li.checked {
-  color: aquamarine;
+#checkboxen {
+  float: left;
 }
