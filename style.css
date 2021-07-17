@@ -13,6 +13,13 @@ h1 {
   text-align: center;
   margin: 0;
   padding: 40px;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  text-shadow: 1px 1px 0px #0445ce, 2px 2px 0px #ce9551;
+}
+
+h2 {
+  font-family: "Roboto", sans-serif;
 }
 
 /* Add me and Button section */
@@ -23,27 +30,65 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+#addme-button {
+  background-color: #3d89ae;
+  border: none;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  border-radius: 3px;
+  box-shadow: 2px 2px 0px 0px #dd5571;
+}
+#addme-button:active {
+  background-color: #41ae3d;
+}
 
+#textfild {
+  border: none;
+}
 /* Radio Button section */
 .options-button {
   text-align: center;
-  display: block;
 }
 
 .button-radio-center {
   display: inline-grid;
+  text-align: center;
   position: relative;
   bottom: 20px;
-}
-input[type="radio" i] {
-  position: relative;
-  top: 15px;
-  left: 10px;
+  font-family: "Roboto", sans-serif;
 }
 
+input[type="radio"]:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #3d89ae;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+input[type="radio"] {
+  position: relative;
+  top: 15px;
+}
 #remove-button {
   margin: 10px;
+  background-color: #3d89ae;
+  border: none;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  border-radius: 3px;
+  box-shadow: 2px 2px 0px 0px #dd5571;
 }
+#remove-button:active {
+  background-color: #41ae3d;
+}
+
 h2 {
   text-align: center;
 }

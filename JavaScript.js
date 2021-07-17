@@ -1,50 +1,49 @@
 console.log("hello");
 
-let button = document.querySelector("#addme");
-let textfild = document.querySelector("#textfild");
+const arr = [];
+const newlist = document.querySelector("#myUL");
+const addbutton = document.querySelector("#addme-button");
+const textfield = document.querySelector("#textfild");
 
-let checkbox = document.createElement("input");
+addbutton.addEventListener("click", function () {
+  const newtext = textfield.value;
+  const newarray = { description: newtext, done: false };
+  arr.push(newarray);
+  textfield.value = "";
+  ////JavasScript ^^^^^^^^////////
 
-button.addEventListener("click", function () {
-  let ul = document.querySelector("#myUL"); //ul
-  let lia = document.querySelector("#li-element");
-  //let li = document.createElement("li"); //li
-  let paragraph = document.createElement("p");
-  let pa = document.querySelector("p");
-
-  let checkbox = document.createElement("input");
+  const newli = document.createElement("li");
+  newli.todoObj = newarray;
+  const textNode = document.createTextNode(newtext);
+  const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
   checkbox.value = 1;
   checkbox.id = "checkboxen";
   checkbox.className = "check";
+  let label = document.createElement("label");
+  const todoid = newtext.trim().toLowerCase().replaceAll(" ", "-"); //Wandeln die ID um
 
-  //paragraph.classList.add("paragraph-styling");
-  paragraph.innerText = textfild.value;
-  textfild.value = "";
-  //li.appendChild(document.createTextNode(text.value));
-  lia.appendChild(checkbox);
-  lia.appendChild(paragraph);
-
-  /////////////////////////////////////////////////////
-  checkbox.addEventListener("change", function (event) {
-    const checkbox = event.target;
-    const checked = checkbox.checked;
-    let pa = checkbox.parentNode.parentNode;
-    if (checked) {
-      paragraph.id = "responded";
-    } else {
-      paragraph.id = "";
-    }
-  });
+  newli.appendChild(label);
+  newli.appendChild(checkbox);
+  label.append(textNode);
+  newlist.appendChild(newli);
+  label.setAttribute("for", todoid);
 });
 
-let list = document.getElementsByClassName("responded");
-for (var i = 0; i < list.length; i++) {
-  list[i].parentNode.removeChild(list[i]);
-  console.log(list);
-}
+newlist.addEventListener("change", function (e) {
+  const newDoneState = e.target.checked;
+  const todoObj = e.target.parentElement.todoObj;
+  todoObj.done = newDoneState;
+});
 
-//let text = document.querySelector("#textfild");
-//li.appendChild(document.createTextNode(text.value));
-//li.appendChild(document.createTextNode(textfild.value));
-//ul.appendChild(li);
+const allfilter = document.querySelector("#button-open");
+//in jedem i ein Objekt
+
+allfilter.addEventListener("click", function () {
+  for (let i = 0; i < newlist.children.length; i++) {
+    const todoObj = newlist.children[i].todoObj;
+    if (todoObj.done === false) {
+      newlist.children[i].hidden = true;
+    }
+  }
+});
