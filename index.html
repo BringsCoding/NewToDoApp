@@ -24,14 +24,14 @@
           </section>
         </header>
         <section class="middel">
-           <input type="text" id="textfild" name="spind" value="" placeholder="Tipp ein" />
+           <input type="text" id="textfild" name="spind" onkeyup="success()" value="" placeholder="Tipp ein" />
            <input type="button" id="addme-button" value="Add me" />
         </section> 
           <section class="options-button">
            <h2>Filter & Options</Option></h2><br>
-           <div class="button-radio-center">     
-               <input type="button" id='button-open' name="button" value="open"><!--open  -->
+           <div class="button-radio-center">   
                <input type="button" id='all' name="button" value="All"><!-- all -->
+               <input type="button" id='button-open' name="button" value="open"><!--open  -->
                <input type="button" id="button-done" name="button" value="done"><!--  done-->
                <input type="button" id="remove-button" value="Remove All" />
             </div>
@@ -39,9 +39,8 @@
         <section>
          <h2>Your To Do´s</h2>
           <ul id="myUL">
-            <li id='li-element' class="test">
-              <input type="checkbox" name="test" id="learn">
-              <label for="learn-css">Learn CSS</label>
+            
+              
             </li>
           </ul>
         </section>

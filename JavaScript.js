@@ -1,6 +1,7 @@
 console.log("hello");
 
 const arr = [];
+
 const newlist = document.querySelector("#myUL");
 const addbutton = document.querySelector("#addme-button");
 const textfield = document.querySelector("#textfild");
@@ -23,11 +24,18 @@ addbutton.addEventListener("click", function () {
   let label = document.createElement("label");
   const todoid = newtext.trim().toLowerCase().replaceAll(" ", "-"); //Wandeln die ID um
 
-  newli.appendChild(label);
   newli.appendChild(checkbox);
+  newli.appendChild(label);
   label.append(textNode);
   newlist.appendChild(newli);
   label.setAttribute("for", todoid);
+
+  //JSON //////
+  JSON.stringify(arr);
+  localStorage.setItem("list", JSON.stringify(arr));
+  localStorage.getItem("list");
+  JSON.parse(localStorage.getItem("list"));
+  success();
 });
 
 newlist.addEventListener("change", function (e) {
@@ -36,7 +44,7 @@ newlist.addEventListener("change", function (e) {
   todoObj.done = newDoneState;
 });
 
-const allfilter = document.querySelector("#button-open");
+const allfilter = document.querySelector("#button-done");
 //in jedem i ein Objekt
 
 allfilter.addEventListener("click", function () {
@@ -47,3 +55,31 @@ allfilter.addEventListener("click", function () {
     }
   }
 });
+
+const filterAll = document.querySelector("#all");
+filterAll.addEventListener("click", function () {
+  for (let i = 0; i < newlist.children.length; i++) {
+    newlist.children[i].hidden = false;
+  }
+});
+
+const allopen = document.querySelector("#button-open");
+allopen.addEventListener("click", function () {
+  for (let i = 0; i < newlist.children.length; i++) {
+    newlist.children[i].hidden = false;
+  }
+});
+
+const remove = document.querySelector("#remove-button");
+remove.addEventListener("click", function () {
+  newlist.innerHTML = "";
+  arr.length = 0;
+});
+
+function success() {
+  if (document.getElementById("textfild").value === "") {
+    document.getElementById("addme-button").disabled = true;
+  } else {
+    document.getElementById("addme-button").disabled = false;
+  }
+}

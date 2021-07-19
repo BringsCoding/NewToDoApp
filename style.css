@@ -99,16 +99,18 @@ h2 {
 }
 
 /* List elemente */
-#li-element {
-  text-align: center;
-  list-style-position: inside;
+#myUL {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 li {
   list-style: none;
 }
 
-#checkboxen:checked + p {
+#checkboxen:checked + label {
   color: #3deb11;
   text-decoration: line-through;
 }
