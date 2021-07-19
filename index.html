@@ -24,15 +24,16 @@
           </section>
         </header>
         <section class="middel">
-           <input type="text" id="textfild" name="spind" onkeyup="success()" value="" placeholder="Tipp ein" />
-           <input type="button" id="addme-button" value="Add me" />
+           <input type="text"  onkeyup="success()" id="textfild" name="spind" value="" placeholder="Tipp ein" />
+           <input type="button"  id="addme-button" value="Add me" minlength="5" />
+          
         </section> 
           <section class="options-button">
            <h2>Filter & Options</Option></h2><br>
            <div class="button-radio-center">   
-               <input type="button" id='all' name="button" value="All"><!-- all -->
-               <input type="button" id='button-open' name="button" value="open"><!--open  -->
-               <input type="button" id="button-done" name="button" value="done"><!--  done-->
+               <input type="radio" id='all' name="button" value="All">all
+               <input type="radio" id='button-open' name="button" value="open">open
+               <input type="radio" id="button-done" name="button" value="done">done
                <input type="button" id="remove-button" value="Remove All" />
             </div>
            </section>

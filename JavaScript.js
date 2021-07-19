@@ -13,6 +13,12 @@ addbutton.addEventListener("click", function () {
   textfield.value = "";
   ////JavasScript ^^^^^^^^////////
 
+  //Bedigung damit mindestens 5 buschataben geschrieben werden
+  if (newtext.length < 5) {
+    alert("Ihr Text ist zu kurz, mindestens 5 Buschtaben");
+    return;
+  }
+
   const newli = document.createElement("li");
   newli.todoObj = newarray;
   const textNode = document.createTextNode(newtext);
@@ -36,17 +42,23 @@ addbutton.addEventListener("click", function () {
   localStorage.getItem("list");
   JSON.parse(localStorage.getItem("list"));
   success();
+
+  //Funktionen für den Filter
   ButtonAll();
   ButtonOpen();
   ButtonDone();
+
+  readColorsFromLocalStorage();
 });
 
+//Überprüft die Checboxen
 newlist.addEventListener("change", function (e) {
   const newDoneState = e.target.checked;
   const todoObj = e.target.parentElement.todoObj;
   todoObj.done = newDoneState;
 });
 
+//Filter All
 function ButtonAll() {
   const filterAll = document.querySelector("#all");
   filterAll.addEventListener("click", function () {
@@ -56,6 +68,7 @@ function ButtonAll() {
   });
 }
 
+//Filter Open mit if/else
 function ButtonOpen() {
   const openfilter = document.querySelector("#button-open");
   //in jedem i ein Objekt
@@ -65,11 +78,15 @@ function ButtonOpen() {
       const todoObj = newlist.children[i].todoObj;
       if (todoObj.done === true) {
         newlist.children[i].hidden = true;
+      } else {
+        newlist.children[i].hidden = false;
+        todoObj.done === false;
       }
     }
   });
 }
 
+//Filter Done mit if/else
 function ButtonDone() {
   const donefilter = document.querySelector("#button-done");
   //in jedem i ein Objekt
@@ -79,6 +96,9 @@ function ButtonDone() {
       const todoObj = newlist.children[i].todoObj;
       if (todoObj.done === false) {
         newlist.children[i].hidden = true;
+      } else {
+        newlist.children[i].hidden = false;
+        todoObj.done === true;
       }
     }
   });
@@ -94,6 +114,7 @@ const remove = document.querySelector("#remove-button");
 remove.addEventListener("click", function () {
   newlist.innerHTML = "";
   arr.length = 0;
+  window.localStorage.clear();
 });
 
 function success() {
@@ -103,3 +124,5 @@ function success() {
     document.getElementById("addme-button").disabled = false;
   }
 }
+
+// initially read colors from local storage
