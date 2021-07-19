@@ -36,6 +36,9 @@ addbutton.addEventListener("click", function () {
   localStorage.getItem("list");
   JSON.parse(localStorage.getItem("list"));
   success();
+  ButtonAll();
+  ButtonOpen();
+  ButtonDone();
 });
 
 newlist.addEventListener("change", function (e) {
@@ -44,31 +47,48 @@ newlist.addEventListener("change", function (e) {
   todoObj.done = newDoneState;
 });
 
-const allfilter = document.querySelector("#button-done");
-//in jedem i ein Objekt
-
-allfilter.addEventListener("click", function () {
-  for (let i = 0; i < newlist.children.length; i++) {
-    const todoObj = newlist.children[i].todoObj;
-    if (todoObj.done === false) {
-      newlist.children[i].hidden = true;
+function ButtonAll() {
+  const filterAll = document.querySelector("#all");
+  filterAll.addEventListener("click", function () {
+    for (let i = 0; i < newlist.children.length; i++) {
+      newlist.children[i].hidden = false;
     }
-  }
-});
+  });
+}
 
-const filterAll = document.querySelector("#all");
-filterAll.addEventListener("click", function () {
-  for (let i = 0; i < newlist.children.length; i++) {
-    newlist.children[i].hidden = false;
-  }
-});
+function ButtonOpen() {
+  const openfilter = document.querySelector("#button-open");
+  //in jedem i ein Objekt
 
-const allopen = document.querySelector("#button-open");
-allopen.addEventListener("click", function () {
-  for (let i = 0; i < newlist.children.length; i++) {
-    newlist.children[i].hidden = false;
-  }
-});
+  openfilter.addEventListener("click", function () {
+    for (let i = 0; i < newlist.children.length; i++) {
+      const todoObj = newlist.children[i].todoObj;
+      if (todoObj.done === true) {
+        newlist.children[i].hidden = true;
+      }
+    }
+  });
+}
+
+function ButtonDone() {
+  const donefilter = document.querySelector("#button-done");
+  //in jedem i ein Objekt
+
+  donefilter.addEventListener("click", function () {
+    for (let i = 0; i < newlist.children.length; i++) {
+      const todoObj = newlist.children[i].todoObj;
+      if (todoObj.done === false) {
+        newlist.children[i].hidden = true;
+      }
+    }
+  });
+}
+//const allopen = document.querySelector("#button-open");
+//allopen.addEventListener("click", function () {
+//for (let i = 0; i < newlist.children.length; i++) {
+//newlist.children[i].hidden = false;
+//}
+//});
 
 const remove = document.querySelector("#remove-button");
 remove.addEventListener("click", function () {
