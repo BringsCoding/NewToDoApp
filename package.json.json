@@ -1,0 +1,22 @@
+
+{
+  "name": "newtodo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "JavaScript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BringsCoding/NewToDoApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BringsCoding/NewToDoApp/issues"
+  },
+  "homepage": "https://github.com/BringsCoding/NewToDoApp#readme"
+}
+ 
